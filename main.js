@@ -17,10 +17,10 @@ function collapse(info, metadata, filename) {
   return result;
 }
 
-function isXfa(pdf, filename) {
+function summarize(pdf, filename) {
   // Loading a document.
   var loadingTask = pdfjsLib.getDocument(pdf);
-  loadingTask.promise
+  return loadingTask.promise
     .then(async function (pdfDocument) {
       const {
         info,
@@ -28,18 +28,28 @@ function isXfa(pdf, filename) {
         contentDispositionFilename,
       } = await pdfDocument.getMetadata();
 
-      console.log(info);
-      console.log(metadata);
-      // console.log(collapse(info, metadatam, filename));
+      // console.log(info);
+      // console.log(metadata);
+      const output = collapse(info, metadata, filename);
+      return output;
     })
     .catch(function (reason) {
       console.error('Error: ' + reason);
     });
 }
 
-const stat = fs.readdirSync('pdf');
+async function getPDFInfo() {
+  const stat = fs.readdirSync('pdf');
+  const output = [];
+  for (const file of stat) {
+    const filepath = `pdf/${file}`;
+    const info = await summarize(filepath, file);
+    output.push(info);
+  }
 
-for (const file of stat) {
-  const filepath = `pdf/${file}`;
-  isXfa(filepath, file);
+  console.log(output);
+
+  return output;
 }
+
+getPDFInfo();
