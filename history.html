@@ -156,12 +156,28 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#history" id="history">History</a></h1>
-<p>PDF currently supports two different methods for integrating data and PDF forms. Both formats today coexist in the PDF specification:</p>
-<pre><code>AcroForms (also known as Acrobat forms), introduced in the PDF 1.2 format specification and included in all later PDF specifications.
-Adobe XML Forms Architecture (XFA) forms, introduced in the PDF 1.5 format specification. Adobe XFA Forms are not compatible with AcroForms.[27] XFA was deprecated from PDF with PDF 2.0.
-
-https://www.iso.org/obp/ui/#iso:std:iso:32000:-2:ed-1:v1:en
-</code></pre>
+<p>PDF currently supports two different methods for integrating data and PDF forms.
+Both formats today coexist in the PDF specification:</p>
+<p>AcroForms (also known as Acrobat forms), introduced in the PDF 1.2 format specification and included in all later PDF specifications. Adobe XML Forms Architecture (XFA) forms, introduced in the PDF 1.5 format specification.</p>
+<p>Adobe XFA Forms are not compatible with AcroForms. <a href="https://www.pdflib.com/pdf-knowledge-base/pdf-20/deprecated-features/">XFA was deprecated from PDF with PDF 2.0 specification</a>.</p>
+<h2><a class="header" href="#pdf-types" id="pdf-types">PDF Types</a></h2>
+<p>PDF documents generally come in two flavors; Acroforms or XFA Forms.</p>
+<p>Acroforms:</p>
+<ul>
+<li>The original PDF implementation, PDF based syntax</li>
+<li>Widely support by javascript, implemented by major browsers</li>
+</ul>
+<p>XFA (XML Forms Architecture):</p>
+<ul>
+<li>Does not use PDF syntax</li>
+<li>Comes in two different types
+<ul>
+<li>Static XFA - produces a fixed layout of a form</li>
+<li>Dynamic XFA - produces a variable arrange of form fields and a variable number of pages depending on data provided</li>
+</ul>
+</li>
+<li>Not widely support by PDF viewing application, popular via Adobe authoring tools</li>
+</ul>
 <h2><a class="header" href="#releases" id="releases">Releases</a></h2>
 <table><thead><tr><th>PDF Version</th><th>Release</th><th>Summary Release</th><th>ISO specification</th></tr></thead><tbody>
 <tr><td>1.0</td><td>Nov 1992</td><td>Adobe Acrobat 1.0</td><td></td></tr>
@@ -177,14 +193,16 @@ https://www.iso.org/obp/ui/#iso:std:iso:32000:-2:ed-1:v1:en
 <tr><td>2.0</td><td>Aug 2017</td><td>Depreciate XFA</td><td>ISO 32000-2</td></tr>
 </tbody></table>
 <h2><a class="header" href="#adobes-trends" id="adobes-trends">Adobe's trends</a></h2>
-<p>Acroforms -&gt; XML Form Architecture -&gt; Liquid (?)</p>
+<p>Adobe is planning on <a href="https://helpx.adobe.com/support/adobe-livecycle-end-of-core-support.html">depreciating their LifeCycle Designer</a> and replacing it with <a href="https://www.adobe.com/marketing/experience-manager-forms.html">Adobe Experience Manager Forms</a>.</p>
+<p>Adobe LifeCycle Designer may be used to continue to produce all types of PDFs.</p>
+<p>It is also possible to change a Dynamic XFA to a Static XFA.</p>
+<pre><code>Static PDF – A PDF which contains an XFA stream and the form layout does not change. Static forms may be interactive (a user can still fill in fields). If a dynamic XDP is rendered with LiveCycle Forms with the Render At Client option set to “No” then the resulting PDF is no longer dynamic – it is now static and behaves like any other static PDF.
+</code></pre>
 <h2><a class="header" href="#browser-trends" id="browser-trends">Browser trends</a></h2>
-<p>Outlining the industry trends for various browsers...</p>
-<h3><a class="header" href="#google-chrome" id="google-chrome">Google Chrome</a></h3>
-<h3><a class="header" href="#mozilla-firefox" id="mozilla-firefox">Mozilla Firefox</a></h3>
+<p>Every major browser has their own version of a built-in PDF viewers.</p>
+<p>Major browsers supports <a href="https://helpx.adobe.com/livecycle/kb/xfa-forms-firefox-chrome.html">Acroforms and not XFA based forms</a> and has <a href="https://helpx.adobe.com/aem-forms/kb/discontinuation-of-npapi-plugins-impact-on-aem-forms.html">disabled the Adobe NPAPI plugin</a> when shipping the browser, causing more headaches in rendering forms.</p>
+<p>To major browsers, it was likely removed because Adobe XFA format is a proprietary format that never made it as part of PDF specification, and adding it as part of their browser could have underlying repercussions.</p>
 <p>Firefox now includes an <a href="https://support.mozilla.org/en-US/kb/view-pdf-files-firefox-or-choose-another-viewer">embedded PDF viewer</a> with the ability to fill out forms via an open source library known as <a href="https://mozilla.github.io/pdf.js/">PDF.js</a>.</p>
-<h3><a class="header" href="#microsoft-edge" id="microsoft-edge">Microsoft Edge</a></h3>
-<h3><a class="header" href="#microsoft-internet-explorer" id="microsoft-internet-explorer">Microsoft Internet Explorer</a></h3>
 <h2><a class="header" href="#references" id="references">References</a></h2>
 <ul>
 <li>
@@ -192,6 +210,9 @@ https://www.iso.org/obp/ui/#iso:std:iso:32000:-2:ed-1:v1:en
 </li>
 <li>
 <p><a href="https://en.wikipedia.org/wiki/PDF">Wikipedia</a></p>
+</li>
+<li>
+<p><a href="https://help.adobe.com/en_US/livecycle/11.0/ddxRef.pdf">Adobe Lifecycle 11.0</a></p>
 </li>
 </ul>
 
