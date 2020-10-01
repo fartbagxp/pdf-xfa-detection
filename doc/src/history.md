@@ -46,10 +46,12 @@ Adobe is planning on [depreciating their LifeCycle Designer](https://helpx.adobe
 
 Adobe LifeCycle Designer may be used to continue to produce all types of PDFs.
 
-It is also possible to change a Dynamic XFA to a Static XFA.
+It is also possible to change a Dynamic XFA to a Static XFA according to [Google Group thread on LifeCycle](https://groups.google.com/g/livecycle/c/-psSfqeZL4s).
 
 ```
-Static PDF – A PDF which contains an XFA stream and the form layout does not change. Static forms may be interactive (a user can still fill in fields). If a dynamic XDP is rendered with LiveCycle Forms with the Render At Client option set to “No” then the resulting PDF is no longer dynamic – it is now static and behaves like any other static PDF.
+Static PDF – A PDF which contains an XFA stream and the form layout does not change. Static forms may be interactive (a user can still fill in fields).
+
+If a dynamic XDP is rendered with LiveCycle Forms with the Render At Client option set to “No” then the resulting PDF is no longer dynamic – it is now static and behaves like any other static PDF.
 ```
 
 ## Browser trends
