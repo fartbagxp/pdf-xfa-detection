@@ -71,3 +71,7 @@ Firefox now includes an [embedded PDF viewer](https://support.mozilla.org/en-US/
 - [Wikipedia](https://en.wikipedia.org/wiki/PDF)
 
 - [Adobe Lifecycle 11.0](https://help.adobe.com/en_US/livecycle/11.0/ddxRef.pdf)
+
+- [Firefox supports Interactive Acroform 2016](https://github.com/mozilla/pdf.js/issues/7613)
+
+- [ Firefox Acroform vs PDF detection](https://github.com/mozilla/pdf.js/pull/12271)
