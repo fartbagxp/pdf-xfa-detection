@@ -1,5 +1,5 @@
 const fs = require('fs');
-const json2csv = require('json2csv');
+const fastcsv = require('fast-csv');
 const pdfjsLib = require('pdfjs-dist/es5/build/pdf.js');
 
 function collapse(info, metadata, filename) {
@@ -40,10 +40,11 @@ function summarize(pdf, filename) {
 }
 
 async function getPDFInfo() {
-  const stat = fs.readdirSync('pdf');
+  const pdfPath = 'data/pdf';
+  const stat = fs.readdirSync(pdfPath);
   const output = [];
   for (const file of stat) {
-    const filepath = `pdf/${file}`;
+    const filepath = `${pdfPath}/${file}`;
     let info = await summarize(filepath, file);
     output.push(info);
   }
@@ -52,7 +53,7 @@ async function getPDFInfo() {
 
 async function writePDFSummary(outputPath) {
   const data = await getPDFInfo();
-  const fastcsv = require('fast-csv');
+
   const ws = fs.createWriteStream('output.csv');
   fastcsv.write(data, { headers: true }).pipe(ws);
 }

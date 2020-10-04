@@ -4,7 +4,8 @@
   "description": "A repository to detect whether a PDF is written in the XML Forms Architecture",
   "main": "main.js",
   "scripts": {
-    "download": "node download.js"
+    "download": "node download.js",
+    "parse": "node main.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,8 @@
   "homepage": "https://github.com/fartbagxp/pdf-xfa-detection#readme",
   "dependencies": {
     "axios": "^0.20.0",
-    "csv": "^5.3.2",
+    "dotenv": "^8.2.0",
     "fast-csv": "^4.3.2",
-    "json2csv": "^5.0.3",
     "pdfjs-dist": "^2.5.207"
   }
 }
