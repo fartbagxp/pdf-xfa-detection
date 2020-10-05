@@ -4,7 +4,7 @@ const pdfjsLib = require('pdfjs-dist/es5/build/pdf.js');
 
 function collapse(info, metadata, filename) {
   const result = {
-    Title: info.Title || filename,
+    Title: filename || info.Title,
     Author: info.Author,
     Subject: info.Subject || '',
     PDFFormatVersion: info.PDFFormatVersion,
@@ -54,7 +54,7 @@ async function getPDFInfo() {
 async function writePDFSummary(outputPath) {
   const data = await getPDFInfo();
 
-  const ws = fs.createWriteStream('output.csv');
+  const ws = fs.createWriteStream('data/output.csv');
   fastcsv.write(data, { headers: true }).pipe(ws);
 }
 
