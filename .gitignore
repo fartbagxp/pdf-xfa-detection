@@ -187,6 +187,9 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,mdbook,node
 
 data/pdf/*
+!data/.gitkeep
+!data/pdf/.gitkeep
+
 source-api.json
 output.txt
 output.csv
