@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/fartbagxp/pdf-xfa-detection#readme",
   "dependencies": {
-    "axios": "^0.20.0",
-    "dotenv": "^8.2.0",
-    "fast-csv": "^4.3.2",
-    "pdfjs-dist": "^2.5.207"
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "fast-csv": "^4.3.6",
+    "pdfjs-dist": "^2.7.570"
   }
 }
